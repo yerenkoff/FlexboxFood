@@ -6,12 +6,18 @@ a {
   text-decoration: none;
   transition: 0.3s;
 }
-body {
+html{
   background: linear-gradient(
     45deg,
     rgba(255, 220, 151, 1) 0%,
     rgba(255, 151, 206, 1) 100%
   );
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: center;
+  min-height: 100%;
+}
+body {
   font-family: "Rubik", sans-serif;
 }
 #hamburger,
@@ -21,7 +27,6 @@ label {
 header {
   display: flex;
   justify-content: space-between;
-  height: 70px;
   box-shadow: 0 -20px 50px #df84b4;
   background: #df84b4aa;
   position: fixed;
@@ -36,6 +41,7 @@ header {
   justify-content: center;
   font-size: 30px;
   padding: 0 50px;
+  line-height: 70px;
   color: #fff;
   font-weight: bold;
   text-shadow: 2px 2px 0px #df84b4;
@@ -43,28 +49,34 @@ header {
 nav {
   display: flex;
   padding-right: 50px;
+  box-sizing: border-box;
+  width: 50%;
 }
 nav a {
   display: flex;
+  line-height: 50px;
   align-items: center;
   justify-content: center;
-  width: 200px;
   margin: 10px 5px;
   border-radius: 5px;
   color: white;
+  flex-grow: 1;
 }
 nav a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 main {
   display: flex;
-  padding: 70px 0;
+  padding: 70px 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .side {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  width: 100px;
+  width: 330px;
+  padding: 0 25px;
 }
 .media {
   display: flex;
@@ -76,7 +88,7 @@ main {
   background-size: cover;
   box-shadow: 0 10px 20px #df84b4;
   background-position: center;
-  margin: 0px 50px 25px;
+  margin: 0px 0px 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +114,6 @@ main {
   background-image: url("str.jpg");
 }
 .options {
-  margin: 0px 50px;
   background: linear-gradient(
     45deg,
     rgba(255, 220, 151, 1) 0%,
@@ -111,7 +122,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   border-radius: 5px;
-  overflow: hidden;
 }
 .options > a {
   width: 50%;
@@ -140,7 +150,7 @@ main {
   align-items: center;
 }
 .social a:hover {
-  border-bottom: 1px solid #fff;
+  background: rgba(255,255,255,0.1);
 }
 .social a img {
   width: 100%;
@@ -149,10 +159,11 @@ main {
   filter: invert(100%) drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
 }
 .content {
-  width: 100px;
+  width: 550px;
   flex-grow: 2;
-  padding-right: 50px;
   box-sizing: border-box;
+  padding: 0 25px;
+
 }
 h2 {
   line-height: 50px;
@@ -163,35 +174,44 @@ h2 {
 }
 .menu {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .menu a {
   height: 500px;
   background-size: cover;
   background-position: center;
   flex-grow: 1;
-  margin: 0 5px;
+  margin: 0 5px 25px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 10px;
+  width: 100px;
   border-radius: 5px;
   transition: 0.6s;
   box-shadow: 0 0px 10px #df84b4;
+  flex-wrap: wrap;
 }
 .menu a:nth-child(1) {
   background-image: url("delivery.jpg");
+  order: 3;
 }
 .menu a:nth-child(2) {
   background-image: url("dinner.jpg");
+  order: 1;
 }
 .menu a:nth-child(3) {
   background-image: url("drink.jpg");
+  order: 2;
 }
 .menu a:nth-child(4) {
   background-image: url("happy.jpg");
+  background-position: bottom;
+  order: 5;
 }
 .menu a:nth-child(5) {
   background-image: url("dessert.jpg");
+  order: 4;
 }
 .menu a:hover {
   transform: scale(1.05);
@@ -199,25 +219,26 @@ h2 {
 }
 .menu a:hover span {
   background: rgba(255, 255, 255, 1);
-  transform: translateY(50%) translateZ(0);
+  transform: translateY(30%) translateZ(0);
 }
 .menu a span {
   transition: 0.6s;
   color: #222;
   text-align: center;
-  font-size: 20px;
+  font-size: 16px;
   background: rgba(0, 0, 0, 0.1);
   background: #fff;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   padding: 10px;
   box-sizing: border-box;
+  margin: 0 10px;
   margin-bottom: 10px;
   transform: translateZ(0);
 }
 .reviews {
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
 }
 .review {
   text-align: center;
@@ -227,7 +248,7 @@ h2 {
   border: 10px solid transparent;
   margin: 5px;
   padding: 20px;
-  width: 10px;
+  width: 250px;
   flex-grow: 1;
   box-sizing: border-box;
   background: linear-gradient(
@@ -252,13 +273,6 @@ h2 {
   border: 10px solid #ffffff55;
 }
 @media (max-width: 600px) {
-  body {
-    background: linear-gradient(
-      85deg,
-      rgba(255, 220, 151, 1) 0%,
-      rgba(255, 151, 206, 1) 100%
-    );
-  }
   header {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
@@ -326,7 +340,6 @@ h2 {
     opacity: 0;
     transition: 0.3s;
     position: fixed;
-    background: gold;
     background: linear-gradient(
       85deg,
       rgba(255, 220, 151, 1) 0%,
@@ -337,6 +350,7 @@ h2 {
     top: 70px;
     flex-direction: column;
     padding-top: 25px;
+    padding-right: 0;
   }
   nav a {
     background: blue;
@@ -344,37 +358,13 @@ h2 {
     height: 40px;
     background: rgba(255, 255, 255, 0.2);
     margin: 0 25px 25px;
+    flex-grow: 0;
   }
-  main {
-    flex-direction: column;
-  }
-  .side {
-    width: auto;
-  }
-  .media a {
-    margin: 0px 25px 25px;
-  }
-  .options {
-    margin: 0 25px;
-  }
-  .content {
-    width: auto;
-    margin: 0 25px;
-    padding: 0;
-  }
-  .menu {
+  .menu{
     flex-direction: column;
   }
   .menu a {
     width: auto;
-    margin: 0px 0 25px;
     height: 200px;
-  }
-  .reviews {
-    flex-direction: column;
-  }
-  .review {
-    width: auto;
-    margin: 0px 0 25px;
   }
 }
